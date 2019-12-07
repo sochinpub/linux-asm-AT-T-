@@ -40,7 +40,7 @@ factorial:
   je end_factorial
 
   decl %eax                 # otherwise, decrease the value
-  pushl %eax                # push it to our call to factorial function
+  pushl %eax                # push it to stack as our next call parameter to factorial function
   call factorial            # recursive call factorial
   movl 8(%ebp), %ebx        # %eax has the return value, so we reload our parameter into
                             # %ebx
